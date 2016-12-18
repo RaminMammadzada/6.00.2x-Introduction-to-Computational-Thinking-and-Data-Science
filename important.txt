@@ -1,0 +1,21 @@
+def __init__(self, room, speed):
+        self.room = room
+        self.speed = speed
+        self.pos = Position(random.randrange(room.width),random.randrange(room.height)) # random position in the room
+        self.direction = random.randrange(360) # random direction
+        self.room.cleanTileAtPosition(self.pos)
+
+    def getRobotPosition(self):
+        return self.pos
+
+    def getRobotDirection(self):
+        return self.direction
+
+    def setRobotPosition(self, position):
+        self.pos = position
+
+    def setRobotDirection(self, direction):
+        self.direction = direction
+
+    def updatePositionAndClean(self):
+        raise NotImplementedError # don't change this!
